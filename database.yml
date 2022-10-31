@@ -1,0 +1,48 @@
+Databases:
+  MSDWILD: msdwild/wav/{uri}.wav
+
+
+Protocols:
+  MSDWILD:
+    SpeakerDiarization:
+      Custom:
+        train:
+          uri: msdwild/lists/train.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        development:
+          uri: msdwild/lists/dev.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        test:
+          uri: msdwild/lists/test.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+      # uses the "many" subset as test
+      Custom_many_test:
+        train:
+          uri: msdwild/lists/train.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        development:
+          uri: msdwild/lists/dev.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        test:
+          uri: msdwild/lists/test_many.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+      # dubious use of the original subsets, consider using the "custom" version instead
+      Original:
+        train:
+          uri: msdwild/lists/few_train.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        development:
+          uri: msdwild/lists/few_val.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
+        test:
+          uri: msdwild/lists/many_val.txt
+          annotation: msdwild/rttm/{uri}.rttm
+          annotated: msdwild/uems/{uri}.uem
